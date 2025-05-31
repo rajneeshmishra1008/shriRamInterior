@@ -326,6 +326,100 @@ footer {
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
+<style>
+  /* Base styles for all devices */
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #111;
+    color: #fff;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .flex-section, .flex-section-reverse {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .flex-section-reverse {
+    flex-direction: row-reverse;
+  }
+
+  .flex-text, .slider {
+    flex: 1 1 45%;
+  }
+
+  .slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    max-height: 400px;
+  }
+
+  .slider img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .slider img.active {
+    opacity: 1;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    color: #ffe87a;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .flex-section, .flex-section-reverse {
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .flex-text, .slider {
+      flex: 1 1 100%;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+    }
+  }
+</style>
 
 
   </style>
