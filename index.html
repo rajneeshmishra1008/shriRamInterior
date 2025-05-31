@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <title>Shriram Interior</title>
+  <style>
+   * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  color: #fff;
+  scroll-behavior: smooth;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+header {
+  position: ;
+  top: 0;
+  z-index: 100;
+  background: rgba(69, 69, 68, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 7px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  transition: all 0.3s ease-in-out;
+  animation: slideDown 1s ease-in-out;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+
+header h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #d6d6d6;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px #e4e2d6; }
+  to { text-shadow: 0 0 20px #dad8d0; }
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background-color: #d6d5d2;
+  color: #000;
+}
+
+section {
+  padding: 80px 20px;
+  min-height: 100vh;
+  position: relative;
+  background-color: #1e1e1e;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #ffe87a;
+  margin-bottom: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  animation: zoomIn 1s ease-out;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+p {
+  text-align: center;
+  color: #ccc;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Added for sections with image + text */
+.flex-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+}
+
+.flex-section-reverse {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+}
+
+.flex-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.flex-image {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+  border-radius: 15px;
+  animation: fadeIn 1.2s ease forwards;
+  box-shadow: 0 8px 20px rgba(255 232 122 / 0.4);
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  width: 280px;
+  backdrop-filter: blur(5px);
+  transition: transform 0.4s ease;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  text-align: center;
+  color: #ffe87a;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallery img {
+  max-width: 300px;
+  border-radius: 10px;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+}
+
+form {
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+form input, form textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  color: #fff;
+  padding: 10px;
+  margin: 15px 0;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+  outline: none;
+  border-color: #ffe87a;
+}
+
+form button {
+  padding: 10px 20px;
+  background: #ffe87a;
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+}
+
+form button:hover {
+  background: #ffcc33;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  color: #bbb;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+@media(max-width: 768px) {
+  header h1 { font-size: 2rem; }
+  nav a { display: block; margin: 10px 0; }
+  .project-card { width: 90%; }
+  .flex-section, .flex-section-reverse {
+    flex-direction: column !important;
+  }
+  .flex-image {
+    max-width: 100%;
+  }
+}
+
+
+.container.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.container.gallery img {
+  width: 200px;
+  height: 140px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.container.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Fullscreen overlay styles */
+#fullscreenOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#fullscreenOverlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #fff;
+}
+
+#fullscreenOverlay .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+}
+
+/* Container for 360 viewer */
+#viewerContainer {
+  width: 90vw;
+  height: 90vh;
+  border-radius: 10px;
+}
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+
+
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <div class="header-content">
+     <center> <h1 style="font-size:60px;color:black;">&#x0936;&#x094d;&#x0930;&#x0940; RAM INTERIOR</h1> 
+        <p style="color:black;">Address:- Room No. 003, Tower T4, LIG Flats, Sanskriti Enclave, Omaxe City, Arjunganj, Lucknow – 226002
+</p>
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Our Specilization</a>
+      <a href="#gallery">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+<!-- HOME SECTION -->
+<section id="home" style="display: flex; flex-direction: column; gap: 30px; padding: 40px 20px; background-image: linear-gradient(135deg, rgba(60,59,63,0.8), rgba(96,92,60,0.8)), url('https://static.vecteezy.com/system/resources/thumbnails/008/641/754/small_2x/living-room-with-armchair-sofa-and-monstera-plant-on-empty-and-copy-space-loft-concrete-wall-background-interior-and-architecture-concept-3d-illustration-rendering-photo.jpg'); background-size: cover; background-position: center; border-radius: 12px;">
+  <div class="container flex-section" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
+
+    <!-- Text Section -->
+    <div class="flex-text" style="flex: 1 1 45%; font-family: 'Poppins', sans-serif;">
+  <h2 class="section-title" style="font-size: 2.5rem; color: #ffe87a; margin-bottom: 20px;">Welcome</h2>
+  <p style="font-size: 1.1rem; color: #ffffff; line-height: 1.8; text-align: justify;">
+    At <strong>Shriram Interior</strong>, we are passionate about transforming ordinary spaces into extraordinary environments that inspire comfort, style, and individuality. We specialize in creating elegant and sophisticated interiors that seamlessly blend innovation with precision.
+     
+    We believe in the power of well-designed spaces to elevate the way you live and work. Whether it's a cozy home, a modern office, or a luxury commercial setting, we ensure every project we undertake reflects our commitment to excellence, quality, and client satisfaction.
+    
+    With a rich portfolio and years of industry experience, Shriram Interior brings together timeless aesthetics, cutting-edge trends, and practical functionality to create interiors that truly resonate with your personality.
+    
+    Trust us to bring your dream space to life — with unmatched craftsmanship, keen attention to detail, and a promise to turn your vision into reality.
+  </p>
+</div>
+
+
+    <!-- Image Slider Section -->
+    <div class="slider" style="flex: 1 1 45%; position: relative; overflow: hidden; border-radius: 10px; height: 400px;">
+      <img class="slide-img" src="https://i.pinimg.com/736x/80/76/7d/80767dc048eefc4b2ca9e9934123d89a.jpg" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 1; transition: opacity 1s ease-in-out;" />
+
+      <img class="slide-img" src="https://us.123rf.com/450wm/roseburn/roseburn1011/roseburn101100001/8245499-3d-render-interior-of-living-room-with-modern-style.jpg?ver=6" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 2s ease-in-out;" />
+
+      <img class="slide-img" src="https://5.imimg.com/data5/SELLER/Default/2020/11/VA/PT/WD/63934041/whatsapp-image-2020-11-27-at-15-37-27-2--500x500.jpeg" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 5s ease-in-out;" />
+
+      <img class="slide-img" src="https://chiedesign.in/wp-content/uploads/2022/09/Luxury-Interiors-Living-Room-scaled.jpg" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 7s ease-in-out;" />
+    </div>
+
+  </div>
+</section>
+
+<!-- Image Slider Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide-img');
+    let current = 0;
+
+    setInterval(() => {
+      slides.forEach((img, index) => {
+        img.style.opacity = index === current ? '1' : '0';
+      });
+      current = (current + 1) % slides.length;
+    }, 4000); // Change slide every 4 seconds
+  });
+</script>
+
+
+
+
+  <section id="about" style="display: flex; flex-direction: column; gap: 30px; padding: 40px 20px; background-image: linear-gradient(135deg, rgba(60,59,63,0.8), rgba(96,92,60,0.8)), url('https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL3JtNDA1LWMwNGItbW9ja3VwLmpwZw.jpg'); background-size: cover; background-position: center; border-radius: 12px;">
+  <div class="container flex-section-reverse" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;">
+    
+     <!-- Image Slider Section -->
+    <div class="slider" style="flex: 1 1 45%; position: relative; overflow: hidden; border-radius: 10px; height: 400px;">
+      <img class="slide-img" src="https://t3.ftcdn.net/jpg/02/94/17/36/360_F_294173684_jLumcjQT4wQSqaSIlfed19P0YyoCM7Gw.jpg" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 1; transition: opacity 1s ease-in-out;" />
+
+      <img class="slide-img" src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?cs=srgb&dl=pexels-fotoaibe-1643383.jpg&fm=jpg" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 2s ease-in-out;" />
+
+      <img class="slide-img" src="https://w0.peakpx.com/wallpaper/63/63/HD-wallpaper-living-room-stylish-interior-design-large-yellow-sofa-modern-interior-design-project.jpg" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 5s ease-in-out;" />
+
+      <img class="slide-img" src="https://images.homify.com/v1574009737/p/photo/image/3264049/11.jpg" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 7s ease-in-out;" />
+    </div>
+
+    <!-- Text Section -->
+    <div class="flex-text" style="flex: 1 1 45%; font-family: 'Poppins', sans-serif; color: #fff;">
+      <h2 class="section-title" style="font-size: 2.5rem; color: #ffe87a; margin-bottom: 20px;">About Us</h2>
+      <p style="font-size: 1.1rem; line-height: 1.8; text-align: justify;">
+        Shriram Interior has been a pioneer in the field of interior design and remodeling for over 4 years, consistently delivering innovative, functional, and aesthetically captivating spaces that elevate everyday living. Our journey began with a simple yet powerful vision — to craft interiors that inspire, comfort, and truly reflect the personalities and aspirations of those who live or work within them.<br><br>
+
+        Our mission is to seamlessly blend style with functionality, offering bespoke solutions that cater to every client’s taste, budget, and spatial requirements. At Shriram Interior, we believe that great design is more than just visual appeal — it’s about crafting environments that enhance comfort, productivity, and well-being.<br><br>
+
+        Our commitment to quality, customer satisfaction, and ethical business practices has earned us the trust of hundreds of happy clients. We don’t just design spaces — we create experiences that last a lifetime.<br><br>
+
+        <b>Choose Shriram Interior — where your dream space becomes a reality.</b>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Slider Script for About Section -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const aboutSlides = document.querySelectorAll('#about .slide-img');
+    let currentAboutSlide = 0;
+
+    setInterval(() => {
+      aboutSlides.forEach((img, index) => {
+        img.style.opacity = index === currentAboutSlide ? '1' : '0';
+      });
+      currentAboutSlide = (currentAboutSlide + 1) % aboutSlides.length;
+    }, 3000);
+  });
+</script>
+
+
+    <section id="projects" style="display: flex; flex-direction: column; gap: 30px; padding: 40px 20px; background-image: linear-gradient(135deg, rgba(60,59,63,0.8), rgba(96,92,60,0.8)), url('https://thumbs.dreamstime.com/b/modern-interior-design-decorative-background-house-apartment-office-hotel-living-room-indoors-home-soft-sofa-fresh-flowers-162197778.jpg'); background-size: cover; background-position: center; border-radius: 12px;">
+    <div class="container ">
+      <h2 class="section-title">We Exprienced On</h2>
+      <div class="projects">
+        <div class="project-card">
+          <img src="https://i.pinimg.com/736x/35/d6/a5/35d6a51e2331382ce9ae603aee272c5f.jpg" alt="Luxury Living Room"/>
+           Luxury Living Room
+        </div>
+        <div class="project-card">
+          <img src="https://i.pinimg.com/736x/41/ce/3e/41ce3e678876cce6aa6604380d8c506b.jpg" alt="Modular Kitchen"/>
+           Modular Kitchen
+        </div>
+        <div class="project-card">
+          <img src="https://i.pinimg.com/564x/5a/45/f6/5a45f6b1fe11e3069aac4d04e1c55979.jpg" alt="Office Interior"/>
+           Office Interior
+        </div>
+        <div class="project-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8_x2l4yHTXF64Tl7mS7GE2eLPRNVuUb5M0A&s" alt="Bedroom Design"/>
+           Elegant Bedroom Design
+        </div>
+        <div class="project-card">
+          <img src="https://assets-news.housing.com/news/wp-content/uploads/2023/02/24002210/temple_4.jpg" alt="Mandir Design"/>
+          Modern Mandir Design
+        </div>
+        <div class="project-card">
+          <img src="https://5.imimg.com/data5/NI/FP/MY-33478617/wall-cupboard-500x500.jpg" alt=" Drawing Room"/>
+          Customized Wardrobe
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <section id="gallery" style="display: flex; flex-direction: column; gap: 30px; padding: 40px 20px; background-image: linear-gradient(135deg, rgba(60,59,63,0.8), rgba(96,92,60,0.8)), url('https://img.freepik.com/free-photo/armchair-green-living-room-with-copy-space_43614-910.jpg?semt=ais_items_boosted&w=740'); background-size: cover; background-position: center; border-radius: 12px;">
+
+  <h2 class="section-title" style="color: #ffe87a; text-align: center; font-size: 2.5rem;">Our Projects</h2>
+
+  <div class="container gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+    <img src="WhatsApp Image 2025-05-31 at 11.59.53 AM.jpeg" alt="Modern Interior" style="width: 100%; border-radius: 10px;" />
+    <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" alt="Modern Interior" style="width: 100%; border-radius: 10px;" />
+    <img src="WhatsApp Image 2025-05-31 at 11.59.45 AM.jpeg" alt="Wooden Furniture" style="width: 100%; border-radius: 10px;" />
+    <img src="https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg" alt="Elegant Living Room" style="width: 100%; border-radius: 10px;" />
+    <img src="https://images.pexels.com/photos/1080719/pexels-photo-1080719.jpeg" alt="Interior Light Setup" style="width: 100%; border-radius: 10px;" />
+    <img src="WhatsApp Image 2025-05-31 at 11.59.47 AM (1).jpeg" alt="Designer Bedroom" style="width: 100%; border-radius: 10px;" />
+    <img src="WhatsApp Image 2025-05-31 at 11.59.50 AM.jpeg" alt="Kitchen Interior" style="width: 100%; border-radius: 10px;" />
+    <img src="https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg" alt="Luxury Sofa Set" style="width: 100%; border-radius: 10px;" />
+    <img src="https://5.imimg.com/data5/JD/OK/MY-36454387/pvc-lighting-panel-500x500.jpg" alt="Decor Wall Design" style="width: 100%; border-radius: 10px;" />
+    <img src="WhatsApp Image 2025-05-31 at 11.59.48 AM.jpeg" alt="Decor Wall Design" style="width: 100%; border-radius: 10px;" />
+    <img src="https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg" alt="Studio Apartment" style="width: 100%; border-radius: 10px;" />
+    <img src="WhatsApp Image 2025-05-31 at 11.59.49 AM.jpeg" alt="Room Arrangement" style="width: 100%; border-radius: 10px;" />
+    <img src="WhatsApp Image 2025-05-31 at 11.59.44 AM.jpeg" alt="Wood Design" style="width: 100%; border-radius: 10px;" />
+    <img src="WhatsApp Image 2025-05-31 at 11.59.52 AM.jpeg" alt="Living Room Setup" style="width: 100%; border-radius: 10px;" />
+     <img src="https://www.founderjar.com/wp-content/uploads/2021/10/Inspirational-Examples-of-Interior-Design-Websites1.jpg" alt="Wood Design" style="width: 100%; border-radius: 10px;" />
+    <img src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?cs=srgb&dl=pexels-pixabay-276724.jpg&fm=jpg" alt="Living Room Setup" style="width: 100%; border-radius: 10px;" />
+  </div>
+</section>
+
+
+
+
+  <section id="pricing">
+ <div class="container" style="display: flex; flex-direction: column; gap: 30px; padding: 40px 20px; background-image: linear-gradient(135deg, rgba(60,59,63,0.8), rgba(96,92,60,0.8)), url('https://static.vecteezy.com/system/resources/thumbnails/023/550/315/small/interior-with-armchair-and-coffee-table-ai-generated-photo.jpg'); background-size: cover; background-position: center; border-radius: 12px;">
+
+
+    <h2 class="section-title" style="color: #ffe87a; text-align: center; font-size: 3rem; margin-bottom: 20px; text-shadow: 2px 2px 5px #000;">Our Pricing Plans</h2>
+    
+    <div class="projects" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
+      
+      <!-- Basic Package -->
+      <div class="project-card" style="background: #1f1f1f; padding: 25px; border-radius: 12px; width: 320px; color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.4); transition: transform 0.3s;">
+        <h3 style="color: #ffcc33; font-size: 1.6rem; margin-bottom: 10px;">Basic Package</h3>
+        <p style="margin-bottom: 10px;">Ideal for small rooms or minimal design requirements.</p>
+        <p style="font-weight: bold; font-size: 1.4rem; margin-bottom: 15px; color: #00e676;">₹50 – ₹80 / sq.ft</p>
+        <ul style="list-style: none; padding-left: 0; font-size: 1rem; line-height: 1.7; color: #ccc;">
+          <li>✔ Initial consultation</li>
+          <li>✔ Basic layout design</li>
+          <li>✔ Material selection assistance</li>
+        </ul>
+      </div>
+
+      <!-- Standard Package -->
+      <div class="project-card" style="background: #1f1f1f; padding: 25px; border-radius: 12px; width: 320px; color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.4); transition: transform 0.3s;">
+        <h3 style="color: #ffcc33; font-size: 1.6rem; margin-bottom: 10px;">Standard Package</h3>
+        <p style="margin-bottom: 10px;">Best for room transformations with custom elements.</p>
+        <p style="font-weight: bold; font-size: 1.4rem; margin-bottom: 15px; color: #00e676;">₹100 – ₹150 / sq.ft</p>
+        <ul style="list-style: none; padding-left: 0; font-size: 1rem; line-height: 1.7; color: #ccc;">
+          <li>✔ Includes Basic Package features</li>
+          <li>✔ Custom furniture designs</li>
+          <li>✔ Lighting & ceiling planning</li>
+          <li>✔ Mid-level 3D visualizations</li>
+        </ul>
+      </div>
+
+      <!-- Premium Package -->
+      <div class="project-card" style="background: #1f1f1f; padding: 25px; border-radius: 12px; width: 320px; color: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.4); transition: transform 0.3s;">
+        <h3 style="color: #ffcc33; font-size: 1.6rem; margin-bottom: 10px;">Premium Package</h3>
+        <p style="margin-bottom: 10px;">Complete luxury interior solutions for homes & offices.</p>
+        <p style="font-weight: bold; font-size: 1.4rem; margin-bottom: 15px; color: #00e676;">₹180 – ₹250+ / sq.ft</p>
+        <ul style="list-style: none; padding-left: 0; font-size: 1rem; line-height: 1.7; color: #ccc;">
+          <li>✔ Includes Standard Package features</li>
+          <li>✔ High-end décor & furnishings</li>
+          <li>✔ Premium material sourcing</li>
+          <li>✔ Advanced 3D walkthroughs</li>
+          <li>✔ Dedicated site supervision</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Simple Pricing Note -->
+    <div style="margin-top: 30px; background: #2a2a2a; padding: 20px; border-radius: 10px; color: #f0f0f0; box-shadow: 0 4px 10px rgba(0,0,0,0.3); font-size: 1rem;">
+      <h3 style="color: #ffe87a; font-size: 1.4rem; margin-bottom: 10px;">Simple Pricing Reference:</h3>
+      <ul style="list-style: disc; padding-left: 20px; line-height: 1.6;">
+        <li><strong>POP False Ceiling:</strong> ₹65 / sq.ft</li>
+        <li><strong>Wall Paint Design:</strong> ₹45 / sq.ft</li>
+        <li><strong>Modular Kitchen:</strong> ₹700 – ₹1800 / sq.ft</li>
+        <li><strong>Wardrobe Design:</strong> ₹700 – ₹1800 / sq.ft</li>
+        <li><strong>Gypsum False Ceiling:</strong> ₹80 / sq.ft</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <section id="contact" style="display: flex; flex-direction: column; gap: 30px; padding: 40px 20px; background-image: linear-gradient(135deg, rgba(60,59,63,0.8), rgba(96,92,60,0.8)), url('https://c4.wallpaperflare.com/wallpaper/351/321/108/sofa-interior-pillow-interior-wallpaper-preview.jpg'); background-size: cover; background-position: center; border-radius: 12px;">
+  <div class="container flex-section" style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; padding: 40px 20px; background-color: #333125;">
+    
+    <!-- Contact Details -->
+    <div class="flex-text" style="min-width: 300px; max-width: 500px;">
+      <h2 class="section-title" style="color: #ffc800;">Contact Us</h2>
+      <p style="font-size: 1.2rem; color: #ccc; margin-bottom: 20px;">
+        We'd love to hear from you! Reach out to us via any of the following methods:
+      </p>
+      <ul style="list-style: none; padding-left: 0; font-size: 1.1rem; color: #eee; line-height: 1.8;">
+        <li><strong>Address:</strong> Room No. 003, Tower T4, LIG Flats, Sanskriti Enclave, Omaxe City, Arjunganj,  Lucknow – 226002
+</li>
+        <li><strong>Phone:</strong> 9559860990, 7081156553</li>
+        <li><strong>Email:</strong> arpitsingh7571@gmail.com</li>
+        <li><strong>Office Hours:</strong> Mon - Sat: 9:00 AM - 6:00 PM</li>
+      </ul>
+      <div style="margin-top: 20px;">
+        <strong style="color: #ffc800;">Follow us:</strong><br />
+
+        <a href="https://www.instagram.com/shri_ram_interior?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="color: #ffe87a; text-decoration: none;">Instagram</a>
+      </div>
+    </div>
+
+    <!-- Google Maps Embed -->
+    <div class="flex-text" style="min-width: 300px; max-width: 500px;">
+      <h3 style="color: #ffe87a; margin-bottom: 15px;">Our Location</h3>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3558.9490101777565!2d80.99868937426756!3d26.803952976732138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be3b07e0cf5cd%3A0x693e820d8e73297d!2sOmaxe%20Sanskriti!5e0!3m2!1sen!2sin!4v1717156363537!5m2!1sen!2sin"
+        width="100%" height="300" style="border:0; border-radius: 10px;"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Shriram Interior Location"
+      ></iframe>
+    </div>
+
+  </div>
+</section>
+
+<footer style="background-color: #2c2c2c; color: #ccc; text-align: center; padding: 20px 10px; font-size: 0.9rem; font-family: Arial, sans-serif;">
+  &copy; 2025 Shriram Interior. All rights reserved.<br />
+  <hr>
+  Developed by 
+  <a href="https://www.instagram.com/rajneeshmishra_1008/" target="_blank" rel="noopener" style="color: #ffe87a; text-decoration: none; font-weight: bold;">
+    Rajneesh Kumar Mishra
+  </a><br />
+  Contact: <a href="8948277840" style="color: #ffe87a; text-decoration: none;">8948277840 , 9795334608</a> | 
+  Email: <a href="mailto:rm0983913@gmail.com" style="color: #ffe87a; text-decoration: none;">rm0983913@gmail.com</a>
+</footer>
+
+
+
+  <script>
+    // Sticky header on scroll
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('sticky');
+      } else {
+        header.classList.remove('sticky');
+      }
+    });
+  </script>
+
+</body>
+</html>
